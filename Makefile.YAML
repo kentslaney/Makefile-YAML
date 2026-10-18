@@ -14,6 +14,7 @@ iana+.well-known:
     w3: w3.org
     pypi: pypi.org
     git: git-scm.com
+    wordnet: en-word.net
   llm-fallback: "*"  # underspecified indeed
 cutoff:  # label required, * wildcards allowed
   hf: 2026-10-18
@@ -23,6 +24,7 @@ cutoff:  # label required, * wildcards allowed
   w3: "*"
   pypi: "*"
   git: "*"
+  wordnet: "*"
   "*": "*"
 ci_validated_cache_metadata:
   cache_timestamp: 2026-10-18 02:05:20 -0700
@@ -38,6 +40,7 @@ ci_validated_cache_metadata:
     - gh+gfx-rs+wgpu_git+commit
     - Wikipedia+en+*_Wikipedia+oldid
     - iana+.well-known+aliases+*
+    - wordnet+*_timestamp
   lint: ~
 repo_bootstrap:
   - |-2
