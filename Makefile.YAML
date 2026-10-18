@@ -10,7 +10,7 @@ ci_validated_cache_metadata:
   hf_timestamp: 2026-07-15 09:40:09 -0700
   loopback_commit: e68637e08404c8d232efe3f11298db4afff7d658
   loopback_timestamp: 2026-10-18 01:50:20 -0700
-  wikipedia_timestamp: 2026-01-01 -0700
+  wikipedia_timestamp: 2026-01-01 -0800
   status: unknown
 repo_bootstrap:
   - Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp data pulled via GitHub actions or `nektos/act`
