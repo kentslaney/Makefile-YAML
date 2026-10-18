@@ -7,10 +7,10 @@ ci_cache_metadata:
   git_day: 2026-10-18
   status: unknown
 repo_bootstrap:
-  - Makefile.YAML for default-HuggingFace-hosted git submodules for cache-friendly JAX PRNG context dependencies
+  - Makefile.YAML for default-HuggingFace-hosted git submodules via GitHub actions or nektos/act
   - add to git an initial implementation for bootstrap using jax and support for WGSL compute shaders but first-class support for WebNN
   - add support and usage examples for AI-guided operational transformations of cache data using git commits via github workflow from
 #indent
   - a noreply HF email for automated changes there
-  - 
+  -
 #outdent 2
