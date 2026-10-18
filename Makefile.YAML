@@ -38,7 +38,7 @@ ci_validated_cache_metadata:
     - gh+explosion+spacy_git+commit
     - gh+nektos+act_git+commit
     - gh+gfx-rs+wgpu_git+commit
-    - Wiki+en+*_Wikipedia+oldid
+    - Wiki+en+*_Wiki+oldid
     - iana+.well-known+aliases+*
     - wordnet+*_timestamp
   lint: ~
