@@ -1,4 +1,5 @@
 source: google/gemma-4-E4B
-repo_bootstrap: >
-  Makefile.YAML for default-HuggingFace-hosted checksum URL for parallel-deterministic-cache-friendly context dependencies
+repo_bootstrap:
+  - Makefile.YAML for default-HuggingFace-hosted checksum URL for parallel-deterministic-cache-friendly context dependencies
+  - add to git an initial implementation for bootstrap using jax and support for WGSL compute shaders but first-class support for WebNN
 
