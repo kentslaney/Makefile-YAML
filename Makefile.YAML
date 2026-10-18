@@ -9,7 +9,7 @@ iana+.well-known:
   aliases:
     hf: huggingface.co
     gh: github.com
-    Wikipedia: wikipedia.org
+    Wiki: wikipedia.org
     arXiv: arxiv.org
     w3: w3.org
     pypi: pypi.org
@@ -19,7 +19,7 @@ iana+.well-known:
 cutoff:  # label required, * wildcards allowed
   hf: 2026-10-18
   gh: "*"
-  Wikipedia: "*-01-01"
+  Wiki: "*-01-01"
   arXiv: "*-*-01"
   w3: "*"
   pypi: "*"
@@ -38,7 +38,7 @@ ci_validated_cache_metadata:
     - gh+explosion+spacy_git+commit
     - gh+nektos+act_git+commit
     - gh+gfx-rs+wgpu_git+commit
-    - Wikipedia+en+*_Wikipedia+oldid
+    - Wiki+en+*_Wikipedia+oldid
     - iana+.well-known+aliases+*
     - wordnet+*_timestamp
   lint: ~
@@ -49,13 +49,13 @@ repo_bootstrap:
     add to git an initial implementation for bootstrap using `-fno-fast-math`
       and support for {{pypi+p+torch/pypi+p+JAX} opgraphs}/{w3+TR+WGSL compute shaders}
       but first-class support for w3+TR+WebNN
-    the [{Wikipedia+en+WebAssembly}]{Wikipedia+en+Rust_(programming_language)}
-      {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL RoPE]} encoding}
+    the [{Wiki+en+WebAssembly}]{Wiki+en+Rust_(programming_language)}
+      {{Wiki+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL RoPE]} encoding}
       should be patched to rewrite
-      non-{proper nouns [as per {Wikipedia+en+SpaCy/notational context}]}
-      to Wikipedia+en+WordNet for {token/position}-friendly-{text notations}
+      non-{proper nouns [as per {Wiki+en+SpaCy/notational context}]}
+      to Wiki+en+WordNet for {token/position}-friendly-{text notations}
   - |-2
       add support and usage examples for AI-guided operational transformations
         of cache data using git commits via github workflow from
-    a noreply Wikipedia+en+Hugging_Face email for automated changes there
+    a noreply Wiki+en+Hugging_Face email for automated changes there
     the git blame author for the *_git+commit changes
