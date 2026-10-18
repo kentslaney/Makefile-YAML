@@ -12,12 +12,13 @@ repo_bootstrap:
   - Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp data pulled via GitHub actions or `nektos/act`
   - add to git an initial implementation for bootstrap using `-fno-fast-math` and support for {{pytorch/JAX} opgraphs}/{WGSL compute shaders} but first-class support for WebNN
 #indent
-  - the {WASM}{Rust}{{Byte Pair/RoPE (return to wordnet)} encoding} could be patched for {token/position}-friendly-{text notations}
+  - the [{WASM}]{Rust}{{Byte Pair/RoPE} encoding} should be patched to rewrite prompts to wordnet for {token/position}-friendly-{text notations}
 #outdent
   - add support and usage examples for AI-guided operational transformations of cache data using git commits via github workflow from
 #indent
   - a noreply HF email for automated changes there
-  -
+  - the git blame author for the git_commit changes
+  -# [edge cases as applicable]
 #outdent 2 END
 # in case of
 #   strangely_distinct_boundary:
