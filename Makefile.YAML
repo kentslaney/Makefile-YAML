@@ -7,6 +7,7 @@ cutoff:  # label required, * wildcards allowed
   hf: 2026-10-18
   github: "*"
   Wikipedia: "*-01-01"
+  arXiv: "*-*-01"
   "*": "*"
 ci_validated_cache_metadata:
   cache_timestamp: 2026-10-18 02:05:20 -0700
@@ -33,7 +34,7 @@ repo_bootstrap:
       and support for {{pypi+torch/pypi+JAX} opgraphs}/{WGSL compute shaders}
       but first-class support for WebNN
     the [{Wikipedia+en+WebAssembly}]{Wikipedia+en+Rust_(programming_language)}
-      {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864v5+[cs.CL]} encoding}
+      {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL]} encoding}
       should be patched to rewrite
       non-{proper nouns [as per {Wikipedia+en+SpaCy/notational context}]}
       to Wikipedia+en+wordnet for {token/position}-friendly-{text notations}
