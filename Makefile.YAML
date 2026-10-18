@@ -1,5 +1,6 @@
 source: google/gemma-4-E4B
-proprietarily_generated_salt: dadadadadadadadadadadadadadadadadadadada # data
+salt: dadadadadadadadadadadadadadadadadadadada # defaults to PRNG-op output bytes overwriten (key-split friendly)
+# to specify a system prompt instead, use the `harness` label
 ci_cache_metadata:
   hf_cutoff: 2026-10-18
   hf_commit: 411aa17b749aa952df1359d2dcea73917a544d9a
