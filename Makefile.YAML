@@ -16,4 +16,7 @@ repo_bootstrap:
 #indent
   - a noreply HF email for automated changes there
   -
-#outdent 2
+#outdent 2 END
+# in case of
+#   strangely_distinct_boundary:
+#     - diff-ready execution ring notations [lintable/transformable {stores any extra bits of information entropy resolved}]
