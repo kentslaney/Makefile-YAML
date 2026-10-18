@@ -30,7 +30,7 @@ ci_validated_cache_metadata:
   hf+*_timestamp: 2026-07-15 09:40:09 -0700
   "*_git+commit": e68637e08404c8d232efe3f11298db4afff7d658
   "*_timestamp": 2026-10-18 01:50:20 -0700
-  "arXiv+2104.09864+[cs.CL]_arXiv+v": 5
+  "arXiv+2104.09864+[cs.CL ...]_arXiv+v": 5
   status: unknown
   unresolved:
     - gh+explosion+spacy_git+commit
