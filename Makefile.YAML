@@ -36,12 +36,7 @@ ci_validated_cache_metadata:
     - github+explosion+spacy_git+commit
     - github+nektos+act_git+commit
     - github+gfx-rs+wgpu_git+commit
-    - Wikipedia+en+WebAssembly_Wikipedia+oldid
-    - Wikipedia+en+Rust_(programming_language)_Wikipedia+oldid
-    - Wikipedia+en+Byte-pair_encoding_Wikipedia+oldid
-    - Wikipedia+en+SpaCy_Wikipedia+oldid
-    - Wikipedia+en+wordnet_Wikipedia+oldid
-    - Wikipedia+en+Hugging_Face_Wikipedia+oldid
+    - Wikipedia+en+*_Wikipedia+oldid
     - iana+.well-known+aliases+*
   lint: ~
 repo_bootstrap:
@@ -52,10 +47,10 @@ repo_bootstrap:
       and support for {{pypi+p+torch/pypi+p+JAX} opgraphs}/{w3+TR+WGSL compute shaders}
       but first-class support for w3+TR+WebNN
     the [{Wikipedia+en+WebAssembly}]{Wikipedia+en+Rust_(programming_language)}
-      {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL]} encoding}
+      {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL RoPE]} encoding}
       should be patched to rewrite
       non-{proper nouns [as per {Wikipedia+en+SpaCy/notational context}]}
-      to Wikipedia+en+wordnet for {token/position}-friendly-{text notations}
+      to Wikipedia+en+WordNet for {token/position}-friendly-{text notations}
   - |-2
       add support and usage examples for AI-guided operational transformations
         of cache data using git commits via github workflow from
