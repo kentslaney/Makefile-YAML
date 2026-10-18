@@ -1,6 +1,9 @@
 source: google/gemma-4-E4B
 salt: dadadadadadadadadadadadadadadadadadadada # defaults to PRNG-op output bytes overwriten (key-split friendly)
 # to specify a system prompt instead, use the `harness` label
+cutoff: # label required, * wildcards allowed
+  hf: 2026-10-18
+  wiki: *-01-01
 ci_cache_metadata:
   hf_cutoff: 2026-10-18 # label required, * wildcards allowed
   hf_commit: 411aa17b749aa952df1359d2dcea73917a544d9a
@@ -18,7 +21,7 @@ repo_bootstrap:
 #indent
   - a noreply HF email for automated changes there
   - the git blame author for the git_commit changes
-  -# [edge cases as applicable]
+  - # [edge cases as applicable]
 #outdent 2 END
 # in case of
 #   strangely_distinct_boundary:
