@@ -1,6 +1,7 @@
 source: google/gemma-4-E4B
 proprietarily_generated_salt: dadadadadadadadadadadadadadadadadadadada # data
 ci_cache_metadata:
+  hf_cutoff: 2026-10-18
   hf_commit: 411aa17b749aa952df1359d2dcea73917a544d9a
   hf_day: 2026-07-15
   git_commit: e68637e08404c8d232efe3f11298db4afff7d658
