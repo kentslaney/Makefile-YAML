@@ -1,5 +1,5 @@
 source: google/gemma-4-E4B
-salt: dadadadadadadadadadadadadadadadadadadada # defaults to PRNG-op output bytes overwriten (key-split friendly)
+salt: abadabadabadabadabadabadabadabadabadabad # defaults to PRNG-op output bytes overwriten (key-split friendly)
 # to specify a system prompt instead, use the `harness` label
 cutoff: # label required, * wildcards allowed
   hf: 2026-10-18
