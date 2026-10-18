@@ -1,54 +1,62 @@
 ---
+anchor-4c77771: &anchor-f653fac
+# defaults to overwriting StableHLO PRNG-op BoE [Wikipedia+en+Entropy_(information_theory)] overwriten (key-split friendly)
+# as defined by a StableHLO graph
 source: google/gemma-4-E4B
-# defaults to PRNG-op output bytes overwriten (key-split friendly)
 salt: abadabadabadabadabadabadabadabadabadabad
 # to specify a system prompt instead, use the `harness` label
 iana+.well-known:
   uri: Makefile.YAML
-  v: 0
+  v: ~
   aliases:
-    hf: huggingface.co
-    gh: github.com
-    Wiki: wikipedia.org
-    arXiv: arxiv.org
-    w3: w3.org
-    pypi: pypi.org
-    git: git-scm.com
-    wordnet: en-word.net
+    hf       :  huggingface.co
+    gh       :  github.com
+    Wiki     :  wikipedia.org
+    arXiv    :  arxiv.org
+    pypi     :  pypi.org
+    git      :  git-scm.com
+    wordnet  :  en-word.net
+    iana     :  iana.org
+    w3       :  w3.org
+    yaml     : yaml.org
+    gopkg    : gopkg.in
   llm-fallback: "*"  # underspecified indeed
 cutoff:  # label required, * wildcards allowed
-  hf: 2026-10-18
-  gh: "*"
-  Wiki: "*-01-01"
-  arXiv: "*-*-01"
-  w3: "*"
-  pypi: "*"
-  git: "*"
-  wordnet: "*"
-  "*": "*"
-ci_validated_cache_metadata:
-  cache_timestamp: 2026-10-18 02:05:20 -0700
-  hf+*_git+commit: 411aa17b749aa952df1359d2dcea73917a544d9a
-  hf+*_timestamp: 2026-07-15 09:40:09 -0700
-  "*_git+commit": e68637e08404c8d232efe3f11298db4afff7d658
-  "*_timestamp": 2026-10-18 01:50:20 -0700
-  "arXiv+2104.09864+[cs.CL ...]_arXiv+v": 5
-  status: unknown
-  unresolved:
-    - gh+explosion+spacy_git+commit
-    - gh+nektos+act_git+commit
-    - gh+gfx-rs+wgpu_git+commit
-    - Wiki+en+*_Wiki+oldid
-    - iana+.well-known+aliases+*
-    - wordnet+*_timestamp
+  hf         :   2026-10-18
+  gh         :  "*"
+  Wiki       :  "****-01-01"
+  yaml       :  "****-01-01"
+  gopkg      :  "****-01-01"
+  arXiv      :  "****-**-01"
+  pypi       :        "*-01"  # interchange-able with previous value
+  git        :  "****-**-**"
+  wordnet    :          "**"  # interchange-able with previous value
+  iana       :          "**"
+  w3         :  "*"
+  "*"        :  "*"           # default: free fallthrough alias dependencies
+ci_validated_cache_metadata: |-
+                         cache_timestamp      :  2026-10-18 02:05:20 -0700
+                          hf+*_git+commit     :  411aa17b749aa952df1359d2dcea73917a544d9a
+                          hf+*_timestamp+-7   :  2026-07-15 09:40:09 -0700
+                            "*_git+commit"    :  e68637e08404c8d232efe3f11298db4afff7d658
+                            "*_timestamp+-7"  :  2026-10-18 01:50:20 -0700
+              arXiv+2104.09864_arXiv+v        :  5
+              arXiv+2104.09864_timestamp+-8   :  2023-11-08 06:36:32 -0800
+            gh+explosion+spacy_git+commit     :  c2dabfc
+                 gh+nektos+act_git+commit     :  4f41128
+                gh+gfx-rs+wgpu_git+commit     :  efcf445
+     gopkg+get+v2+mikefarah+yq_git+commit     :  ~
+                     Wiki+en+*_Wiki+oldid     :  ~
+    iana+.well-known+aliases+*_timestamp      :  ~
+                     wordnet+*_timestamp      :  ~
   lint: ~
 repo_bootstrap:
-  - |-2
+  - &Makefile-YAML |-2
       Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp
         data pulled via GitHub actions or gh+nektos+act
     add to git an initial implementation for bootstrap using `-fno-fast-math`
-      and support for {{pypi+p+torch/pypi+p+JAX} opgraphs}/{w3+TR+WGSL compute shaders}
-      but first-class support for w3+TR+WebNN
+      and support for {{pypi+p+torch/pypi+p+JAX} opgraphs}/
+      {w3+TR+WGSL compute shaders} but first-class support for w3+TR+WebNN
     the [{Wiki+en+WebAssembly}]{Wiki+en+Rust_(programming_language)}
       {{Wiki+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL RoPE]} encoding}
       should be patched to rewrite
