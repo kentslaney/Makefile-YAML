@@ -3,28 +3,32 @@ salt: abadabadabadabadabadabadabadabadabadabad # defaults to PRNG-op output byte
 # to specify a system prompt instead, use the `harness` label
 cutoff: # label required, * wildcards allowed
   hf: 2026-10-18
-  github: *
-  wikipedia: *-01-01
-  loopback: *
+  github: "*"
+  Wikipedia: "*-01-01"
+  "*": "*"
 ci_validated_cache_metadata:
   cache_timestamp: 2026-10-18 02:05:20 -0700
-  hf_commit: 411aa17b749aa952df1359d2dcea73917a544d9a
-  hf_timestamp: 2026-07-15 09:40:09 -0700
-  loopback_commit: e68637e08404c8d232efe3f11298db4afff7d658
-  loopback_timestamp: 2026-10-18 01:50:20 -0700
+  hf+*_git+commit: 411aa17b749aa952df1359d2dcea73917a544d9a
+  hf+*_timestamp: 2026-07-15 09:40:09 -0700
+  *_git+commit: e68637e08404c8d232efe3f11298db4afff7d658
+  *_timestamp: 2026-10-18 01:50:20 -0700
   status: unknown
+  unresolved:
+    - github+explosion+spacy_git+commit
+    - github+nektos+act_git+commit
+    - github+gfx-rs+wgpu_git+commit
+    - Wikipedia+en+WebAssembly_Wikipedia+oldid
+    - Wikipedia+en+Rust_(programming_language)_Wikipedia+oldid
+    - Wikipedia+en+Byte-pair_encoding_Wikipedia+oldid
+    - Wikipedia+en+SpaCy_Wikipedia+oldid
+    - Wikipedia+en+wordnet_Wikipedia+oldid
+    - Wikipedia+en+Hugging_Face_Wikipedia+oldid
 repo_bootstrap:
-  - Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp data pulled via GitHub actions or `nektos/act`
-  - add to git an initial implementation for bootstrap using `-fno-fast-math` and support for {{pytorch/JAX} opgraphs}/{WGSL compute shaders} but first-class support for WebNN
-#indent
-  - the [{WASM}]{Rust}{{Byte Pair/RoPE} encoding} should be patched to rewrite non-{proper nouns [as per Wikipedia-en/SpaCy]} to wordnet for {token/position}-friendly-{text notations}
-#outdent
-  - add support and usage examples for AI-guided operational transformations of cache data using git commits via github workflow from
-#indent
-  - a noreply HF email for automated changes there
-  - the git blame author for the git_commit changes
-  - # [edge cases as applicable]
-#outdent 2 END
-# in case of
-#   strangely_distinct_boundary:
-#     - diff-ready execution ring notations [lintable/transformable {stores any extra bits of information entropy resolved}]
+  - |-2
+      Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp data pulled via GitHub actions or `nektos/act`
+    add to git an initial implementation for bootstrap using `-fno-fast-math` and support for {{pypi+torch/pypi+JAX} opgraphs}/{WGSL compute shaders} but first-class support for WebNN
+    the [{Wikipedia+en+WebAssembly}]{Wikipedia+en+Rust_(programming_language)}{{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864v5+[cs.CL]} encoding} should be patched to rewrite non-{proper nouns [as per {Wikipedia+en+SpaCy/notational context}]} to Wikipedia+en+wordnet for {token/position}-friendly-{text notations}
+  - |-2
+      add support and usage examples for AI-guided operational transformations of cache data using git commits via github workflow from
+    a noreply Wikipedia+en+Hugging_Face email for automated changes there
+    the git blame author for the *_git+commit changes
