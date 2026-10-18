@@ -8,4 +8,4 @@ ci_cache_metadata:
 repo_bootstrap:
   - Makefile.YAML for default-HuggingFace-hosted checksum URL for parallel-deterministic-cache-friendly context dependencies
   - add to git an initial implementation for bootstrap using jax and support for WGSL compute shaders but first-class support for WebNN
-
+  - add support and usage examples for LLM-guided operational transformations of cache data
