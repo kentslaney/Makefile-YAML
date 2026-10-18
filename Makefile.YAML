@@ -8,7 +8,7 @@ iana+.well-known:
   v: 0
   aliases:
     hf: huggingface.co
-    github: github.com
+    gh: github.com
     Wikipedia: wikipedia.org
     arXiv: arxiv.org
     w3: w3.org
@@ -17,7 +17,7 @@ iana+.well-known:
   llm-fallback: "*"  # underspecified indeed
 cutoff:  # label required, * wildcards allowed
   hf: 2026-10-18
-  github: "*"
+  gh: "*"
   Wikipedia: "*-01-01"
   arXiv: "*-*-01"
   w3: "*"
@@ -33,16 +33,16 @@ ci_validated_cache_metadata:
   "arXiv+2104.09864+[cs.CL]_arXiv+v": 5
   status: unknown
   unresolved:
-    - github+explosion+spacy_git+commit
-    - github+nektos+act_git+commit
-    - github+gfx-rs+wgpu_git+commit
+    - gh+explosion+spacy_git+commit
+    - gh+nektos+act_git+commit
+    - gh+gfx-rs+wgpu_git+commit
     - Wikipedia+en+*_Wikipedia+oldid
     - iana+.well-known+aliases+*
   lint: ~
 repo_bootstrap:
   - |-2
       Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp
-        data pulled via GitHub actions or `nektos/act`
+        data pulled via GitHub actions or gh+nektos+act`
     add to git an initial implementation for bootstrap using `-fno-fast-math`
       and support for {{pypi+p+torch/pypi+p+JAX} opgraphs}/{w3+TR+WGSL compute shaders}
       but first-class support for w3+TR+WebNN
