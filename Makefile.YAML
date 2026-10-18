@@ -3,11 +3,23 @@ source: google/gemma-4-E4B
 # defaults to PRNG-op output bytes overwriten (key-split friendly)
 salt: abadabadabadabadabadabadabadabadabadabad
 # to specify a system prompt instead, use the `harness` label
+iana+.well-known:
+  uri: Makefile.YAML
+  v: 0
+  aliases:
+    hf: huggingface.co
+    github: github.com
+    Wikipedia: wikipedia.org
+    arXiv: arxiv.org
+    w3: w3.org
+    git: git-scm.com
+  llm-fallback: *
 cutoff:  # label required, * wildcards allowed
   hf: 2026-10-18
   github: "*"
   Wikipedia: "*-01-01"
   arXiv: "*-*-01"
+  w3: "*"
   "*": "*"
 ci_validated_cache_metadata:
   cache_timestamp: 2026-10-18 02:05:20 -0700
@@ -27,13 +39,14 @@ ci_validated_cache_metadata:
     - Wikipedia+en+SpaCy_Wikipedia+oldid
     - Wikipedia+en+wordnet_Wikipedia+oldid
     - Wikipedia+en+Hugging_Face_Wikipedia+oldid
+    - iana+.well-known+aliases+*
 repo_bootstrap:
   - |-2
       Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp
         data pulled via GitHub actions or `nektos/act`
     add to git an initial implementation for bootstrap using `-fno-fast-math`
-      and support for {{pypi+torch/pypi+JAX} opgraphs}/{WGSL compute shaders}
-      but first-class support for WebNN
+      and support for {{pypi+torch/pypi+JAX} opgraphs}/{w3+TR+WGSL compute shaders}
+      but first-class support for w3+TR+WebNN
     the [{Wikipedia+en+WebAssembly}]{Wikipedia+en+Rust_(programming_language)}
       {{Wikipedia+en+Byte-pair_encoding/arXiv+2104.09864+[cs.CL]} encoding}
       should be patched to rewrite
