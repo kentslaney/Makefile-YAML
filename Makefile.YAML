@@ -21,6 +21,8 @@ cutoff:  # label required, * wildcards allowed
   Wikipedia: "*-01-01"
   arXiv: "*-*-01"
   w3: "*"
+  pypi: "*"
+  git: "*"
   "*": "*"
 ci_validated_cache_metadata:
   cache_timestamp: 2026-10-18 02:05:20 -0700
@@ -41,6 +43,7 @@ ci_validated_cache_metadata:
     - Wikipedia+en+wordnet_Wikipedia+oldid
     - Wikipedia+en+Hugging_Face_Wikipedia+oldid
     - iana+.well-known+aliases+*
+  lint: ~
 repo_bootstrap:
   - |-2
       Makefile.YAML for default-HuggingFace-hosted git submodules with timestamp
