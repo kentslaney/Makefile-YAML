@@ -1,9 +1,9 @@
 source: google/gemma-4-E4B
 salt: ~
 # salt              :
-#   salt+*+*+0x     : abad
-#   salt+*+repeats  : 12
-#   salt+0x         : ""
+#   salt+*+*+0x     :  abad
+#   salt+*+repeats  :  12
+#   salt+0x         :  ""
 ---
 
 iana+.well-known:
