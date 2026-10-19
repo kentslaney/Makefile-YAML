@@ -75,7 +75,7 @@ ci+validated_cache_metadata:
       utc+-_               :  ~
 ---
 
-format+bootstrap:  # format's
+format+bootstrap:
   - source: >-
       default-HuggingFace-hosted git-submodule with timestamp data via
       commit hook
