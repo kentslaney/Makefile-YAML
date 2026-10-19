@@ -1,10 +1,3 @@
-make+src:
-  hf:
-    google/gemma-4-E4B-it:
-  gh:
-    kasper0406/gemma-coreml-chat:
----
-
 iana+.well-known:
   uri           :  Makefile.YAML
   v             :  ~
@@ -37,6 +30,12 @@ ci+cutoff       :  # label required, * wildcards allowed
   iana          :          "**"
   w3            :  "*"
   "*"           :  "*"           # default: free fallthrough alias dependencies
+
+make+src:
+  hf:
+    google+gemma-4-E4B-it:
+  gh:
+    kasper0406+gemma-coreml-chat:
 
 ci+validated_cache_metadata:
   cache                    :
@@ -79,13 +78,13 @@ ci+validated_cache_metadata:
 make+cache:
   git+commit: ~
   make+llm-docs:
-    iana+.well-known: "*"
-    ci+cutoff:
-    ci+validated_cache_metadata:
-    make+bootstrap:
-    make+cache:
-      git+commit:
-      make+llm-docs:
+    - iana+.well-known: "*"
+      ci+cutoff:
+      ci+validated_cache_metadata:
+    - make+cache:
+        git+commit:
+        make+llm-docs:
+      make+bootstrap:
 
 make+bootstrap:
   - make+src: >-
