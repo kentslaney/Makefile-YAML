@@ -1,9 +1,8 @@
-source: google/gemma-4-E4B
-salt: ~
-# salt              :
-#   salt+*+*+0x     :  abad
-#   salt+*+repeats  :  12
-#   salt+0x         :  ""
+make+src:
+  hf:
+    google/gemma-4-E4B-it:
+  gh:
+    kasper0406/gemma-coreml-chat:
 ---
 
 iana+.well-known:
@@ -21,7 +20,9 @@ iana+.well-known:
     w3          :  w3.org
     yaml        :  yaml.org
     gopkg-v2    :  gopkg.in  # url formats' subset
-  no-LLMs       :  []
+    iso         :
+      remote    :  iso.org
+      utc+-_    :  ISO 8601
                 #
 ci+cutoff       :  # label required, * wildcards allowed
   hf            :   2026-10-18
@@ -39,19 +40,19 @@ ci+cutoff       :  # label required, * wildcards allowed
 
 ci+validated_cache_metadata:
   cache                    :
-    utc+-_                 :  2026-10-18 02:05:20 -0700
+    utc+-_                 :  2026-10-18T02:05:20-0700
   hf                       :
     git+commit             :  411aa17b749aa952df1359d2dcea73917a544d9a
-    utc+-_                 :  2026-07-15 09:40:09 -0700
+    utc+-_                 :  2026-07-15T09:40:09-0700
   "*"                      :
     git+commit             :  e68637e08404c8d232efe3f11298db4afff7d658
-    utc+-_                 :  2026-10-18 01:50:20 -0700
+    utc+-_                 :  2026-10-18T01:50:20-0700
     ci+lint                :  ~
   arXiv                    :
     2104.09864             :  # [cs.CL]
       arXiv+alias          :  RoPE
       arXiv+v              :  5
-      utc+-_               :  2023-11-08 06:36:32 -0800
+      utc+-_               :  2023-11-08T06:36:32-0800
   gh                       :
     explosion+spacy        :
       git+commit           :  c2dabfc
@@ -75,18 +76,29 @@ ci+validated_cache_metadata:
       utc+-_               :  ~
 ---
 
-format+bootstrap:
-  - source: >-
+make+cache:
+  git+commit: ~
+  make+llm-docs:
+    iana+.well-known: "*"
+    ci+cutoff:
+    ci+validated_cache_metadata:
+    make+bootstrap:
+    make+cache:
+      git+commit:
+      make+llm-docs:
+
+make+bootstrap:
+  - make+src: >-
       default-HuggingFace-hosted git-submodule with timestamp data via
       commit hook
-    salt:
-      - null (~) to raise exceptions on JIT PRNG ops
-      - salt+*+*+0x: >-
+    make+prng+salt:
+      - default: null (`~`) to raise exceptions on JIT PRNG ops
+      - make+prng+*+*+0x: >-
           initialization data to tile
-        salt+*+repeats: >-
-          number of times to repeat the data specified in `salt+*+*+0x`
-        salt+0x:
-          - empty string ("") gives default behavior
+        make+prng+*+repeats: >-
+          number of times to repeat the data specified in `make+prng+*+*+0x`
+        make+prng+0x:
+          - empty string (`""`) gives default behavior
           - >-
             otherwise, overwrites StableHLO PRNG-op
             {BoE}[Bits of Entropy][{Wiki+en+Entropy_(information_theory)}]
@@ -95,10 +107,6 @@ format+bootstrap:
             after the specified number of bytes,
             followed by the initialization data's number of repeats,
             the PRNG key split will lower {BoE} generation as normal
-    iana+.well-known:
-    ci+cutoff:
-    ci+validated_cache_metadata:
-    format+bootstrap:
 
   - - >-
       add to git an initial implementation for bootstrap using `-fno-fast-math`
@@ -119,7 +127,8 @@ format+bootstrap:
       add a linker stage to rewrite NLP inputs other than proper nouns into
       {Wiki+en+WordNet} vocabulary for
       (token/position)-friendly-(text notations) using
-      ({Wiki+en+SpaCy}/notationally)-based-context before resuming {BPE}
+      ({Wiki+en+SpaCy}/notationally)-based-context before resuming {BPE}.
+      Like LangChain in the sense of Munroe's "{Wiki+en+Thing_Explainer}".
   - - >-
       add support and usage examples for AI-guided operational transformations
       of cache data using git commits via github workflow from
