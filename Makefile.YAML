@@ -103,10 +103,10 @@ format-s_bootstrap:  # format's
 
   - - >-
         the stack should look like
-    - - "{Wiki+en+WebAssembly translation layer as applicable}"
+    - - "{Wiki+en+WebAssembly} translation layer as applicable"
       - "{Wiki+en+Rust_(programming_language)}"
       - "{BPE}[{Wiki+en+Byte-pair_encoding}]"
-      - "{arXiv+alias+RoPE encoding}"
+      - "{arXiv+alias+RoPE} encoding"
 
   - >-
       add a linker stage to rewrite NLP inputs other than proper nouns into
