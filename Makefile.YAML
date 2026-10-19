@@ -8,7 +8,7 @@ salt: ~
 
 iana+.well-known:
   uri           :  Makefile.YAML
-  v             :   ~
+  v             :  ~
   aliases       :
     hf          :  huggingface.co
     gh          :  github.com
@@ -21,7 +21,7 @@ iana+.well-known:
     w3          :  w3.org
     yaml        :  yaml.org
     gopkg-v2    :  gopkg.in  # url formats' subset
-  llm-fallback  :  "*"       # underspecified indeed
+  no-LLMs       :  []
                 #
 ci+cutoff       :  # label required, * wildcards allowed
   hf            :   2026-10-18
