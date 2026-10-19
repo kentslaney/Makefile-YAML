@@ -23,7 +23,7 @@ iana+.well-known:
     gopkg-v2    :  gopkg.in  # url formats' subset
   llm-fallback  :  "*"       # underspecified indeed
                 #
-cutoff          :  # label required, * wildcards allowed
+ci+cutoff       :  # label required, * wildcards allowed
   hf            :   2026-10-18
   gh            :  "*"
   Wiki          :  "****-01-01"
@@ -37,7 +37,7 @@ cutoff          :  # label required, * wildcards allowed
   w3            :  "*"
   "*"           :  "*"           # default: free fallthrough alias dependencies
 
-ci_validated_cache_metadata:
+ci+validated_cache_metadata:
   cache                    :
     utc+-_                 :  2026-10-18 02:05:20 -0700
   hf                       :
@@ -46,20 +46,21 @@ ci_validated_cache_metadata:
   "*"                      :
     git+commit             :  e68637e08404c8d232efe3f11298db4afff7d658
     utc+-_                 :  2026-10-18 01:50:20 -0700
+    ci+lint                :  ~
   arXiv                    :
-    arXiv+2104.09864       :  # [cs.CL]
+    2104.09864             :  # [cs.CL]
       arXiv+alias          :  RoPE
       arXiv+v              :  5
       utc+-_               :  2023-11-08 06:36:32 -0800
   gh                       :
-    gh+explosion+spacy     :
+    explosion+spacy        :
       git+commit           :  c2dabfc
-    gh+nektos+act          :
+    nektos+act             :
       git+commit           :  4f41128
-    gh+gfx-rs+wgpu         :
+    gfx-rs+wgpu            :
       git+commit           :  efcf445
   gopkg-v2                 :
-    gopkg-v2+mikefarah+yq  :
+    mikefarah+yq           :
       git+commit           :  ~
   Wiki                     :
     Wiki+en+*              :
@@ -69,29 +70,35 @@ ci_validated_cache_metadata:
       utc+-_               :  ~
   wordnet                  :
     utc+-_                 :  ~
-  pypi+p+yamllint          :  ~
+  pypi                     :
+    yamllint               :
+      utc+-_               :  ~
 ---
 
-format-s_bootstrap:  # format's
+format+bootstrap:  # format's
   - source: >-
       default-HuggingFace-hosted git-submodule with timestamp data via
       commit hook
-    salt: >-
+    salt:
       - null (~) to raise exceptions on JIT PRNG ops
-    salt+*+*+0x: >-
-      initialization data to tile
-    salt+*+repeats: >-
-      number of times to repeat the data specified in `salt+*+*+0x`
-    salt+0x:
-      - empty string ("") gives default behavior
-      - >-
-        otherwise, overwrites StableHLO PRNG-op
-        {BoE}[Bits of Entropy][{Wiki+en+Entropy_(information_theory)}]
-        as defined by, e.g., a StableHLO graph
-      - >-
-        after the specified number of bytes,
-        followed by the initialization data's number of repeats,
-        the PRNG key split will lower {BoE} generation as normal
+      - salt+*+*+0x: >-
+          initialization data to tile
+        salt+*+repeats: >-
+          number of times to repeat the data specified in `salt+*+*+0x`
+        salt+0x:
+          - empty string ("") gives default behavior
+          - >-
+            otherwise, overwrites StableHLO PRNG-op
+            {BoE}[Bits of Entropy][{Wiki+en+Entropy_(information_theory)}]
+            as defined by, e.g., a StableHLO graph
+          - >-
+            after the specified number of bytes,
+            followed by the initialization data's number of repeats,
+            the PRNG key split will lower {BoE} generation as normal
+    iana+.well-known:
+    ci+cutoff:
+    ci+validated_cache_metadata:
+    format+bootstrap:
 
   - - >-
       add to git an initial implementation for bootstrap using `-fno-fast-math`
@@ -116,7 +123,7 @@ format-s_bootstrap:  # format's
   - - >-
       add support and usage examples for AI-guided operational transformations
       of cache data using git commits via github workflow from
-    - - a noreply Wiki+en+Hugging_Face email for automated changes there
+    - - a noreply {Wiki+en+Hugging_Face} email for automated changes there
       - >-
         the git blame author for the changes' wildcard prefix
         representing loopback
